@@ -26,7 +26,7 @@ class emcAndemifacility:
         return self.anechoicChamberType
     def getStandardNumber(self):
         return self.standardNumber
-
+#dimensions are in meters
 daytonTBrownEMIroom1 = emcAndemifacility("usa", "6x6x3.7", "10 kHz-40 GHz", "1.4", "semi", "MIL-STD-461, DO-16O, UK DEF STAN 59-41")
 daytonTBrownEMIroom2 = emcAndemifacility("usa", "9.8x9.1x3.7", "11 kHz-40 GHz", "1.4", "semi", "MIL-STD-461, DO-16O, UK DEF STAN 59-41")
 daytonTBrownEMIroom3 = emcAndemifacility("usa", "4.6x5.5x3.0", "12 kHz-40 GHz", "1.4", "semi", "MIL-STD-461, DO-16O, UK DEF STAN 59-41")
@@ -42,3 +42,58 @@ ngSpacePark3 = emcAndemifacility("NG Space Park", "6.7 x 6.1 x 4.9", "10 KHz - 4
 tartuObservatory = emcAndemifacility("University of Tartu, Tartu Observatory", "4.28 m x 3.08 m x 2.55 m, test distance 1 m", "30 MHz ... 18 GHz", "max 0.05 kV/m", "semi", "IEC/EN 61000-4-3; ECSS-E-ST-20-07C ; MIL-STD-461G")
 
 EMCAndEMIFacilities = [daytonTBrownEMIroom1,daytonTBrownEMIroom2, daytonTBrownEMIroom3, daytonTBrownEMIroom4, daytonTBrownEMIroom5, daytonTBrownEMIroom6,ngAzusaB183,ngAzusaB200,ngAzusaB200aTent,ngSpacePark1,ngSpacePark2,ngSpacePark3ddd]
+
+
+class vibrationFacility:
+    def __init__(self, location, slipTabledimensions,headExpanderDimensions, testType, maxForce, randomVibrationForce, frequencyRange, peakToPeakMaxDisplacement,maxBareTableAcceleration, maxLoadCapacity):
+        self.location = location
+        self.slipTabledimensions = slipTabledimensions
+        self.headExpanderDimensions = headExpanderDimensions
+        self.testType = testType
+        self.maxForce = maxForce
+        self.randomVibrationForce = randomVibrationForce
+        self.frequencyRange = frequencyRange
+        self.peakToPeakMaxDisplacement = peakToPeakMaxDisplacement
+        self.maxBareTableAcceleration = maxBareTableAcceleration
+        self.maxLoadCapacity = maxLoadCapacity
+
+
+    def getSlipTableDimensions(self):
+        return self.slipTabledimensions
+    def getHeadExpanderDimensions(self):
+        return self.headExpanderDimensions
+    def getTestType(self):
+        return self.testType
+    def getMaxForce(self):
+        return self.maxForce
+    def getRandomVibrationForce(self):
+        return self.randomVibrationForce
+    def getFrequencyRange(self):
+        return self.frequencyRange
+    def getPeakToPeakMaxDisplacement(self):
+        return self.peakToPeakMaxDisplacement
+    def getMaxBareTableAcceleration(self):
+        return self.maxBareTableAcceleration
+    def getMaxLoadCapacity(self):
+        return self.maxLoadCapacity
+
+daytonTBrown1 = vibrationFacility("USA", "36x36 m", "36x36 m", "any", "178 kN", "89 kN", "3–3000 Hz", "2 mm", "200 G", "500 kg")
+daytonTBrown2 = vibrationFacility("USA", "36x36 m", "36x36 m", "Any", "178 kN", "89 kN", "3–3000 Hz", "1 mm", "200 G", "500 kg")
+daytonTBrown3 = vibrationFacility("USA", "36x36 m", "36x36 m", "Any", "212 kN", "106 kN", "3–3000 Hz", "3 mm", "200 G", "500 kg")
+daytonTBrown4 = vibrationFacility("USA", "any size", "32x96 m", "Any", "354 kN", "177 kN", "3–3000 Hz", "2 mm", "200 G", "10000 kg")
+daytonTBrown5 = vibrationFacility("USA", "60x60 m", "32x96 and 60x60 m", "Any", "133–490 kN", "245 kN", "0.1–3000 Hz", "3–10.5 mm", "50–200 G", "5000–10000 kg")
+daytonTBrown6 = vibrationFacility("USA", "36x36 m", "36x36 m", "Any", "66 kN", "66 kN", "5–2300 Hz", "2 mm", "100 G", "500 kg")
+eliteElectronicEngineering = vibrationFacility("USA", "2.4x2.4 m", "1.8x2.4 m", "sine, random", "347 kN", "unknown", "unknown", "unknown", "220 G", "2993 kg")
+ngAzusa1 = vibrationFacility("USA", "48x48 in", "36x36 in", "All", "20000 F-lbs", "18000 F-lbs", "4–2500 Hz", "2 in", "50 G", "1000 lbs")
+ngAzusa2 = vibrationFacility("USA", "48x48 in", "36x36 in", "All", "20000 F-lbs", "18000 F-lbs", "4–2500 Hz", "2 in", "50 G", "1000 lbs")
+ngAzusa3 = vibrationFacility("USA", "60x60 in", "60x60 in", "All", "50000 F-lbs", "48000 F-lbs", "4–2500 Hz", "3 in", "100 G", "4000 lbs")
+ngSpaceParkT5500SCIF = vibrationFacility("USA", "120x119 in (JWST) or custom", "116 in diam (JWST) or custom", "All", "55000 F-lbs (sine)", "48000 F-lbs (random)", "5–2000 Hz", "2 in", "100 G", "4000 lbs")
+ngSpaceParkT4000 = vibrationFacility("USA", "75x73.5 in", "63 in diam", "All", "40000 F-lbs (sine)", "36000 F-lbs (random)", "5–2000 Hz", "2 in", "100 G", "4000 lbs")
+ngSpaceParkT1000 = vibrationFacility("USA", "33x33 in", "25 in diam", "All", "21500 F-lbs (sine)", "18000 F-lbs (random)", "5–2000 Hz", "2 in", "100 G", "1500 lbs")
+ngSpaceParkC150 = vibrationFacility("USA", "33x33 in", "25 in diam", "All", "17000 F-lbs (sine)", "15000 F-lbs (random)", "5–2000 Hz", "1 in", "100 G", "1000 lbs")
+universityTartuObservatory = vibrationFacility("Observatooriumi 1, Tõravere, 61602, Estonia", "No slip table", "16 cm", "Sinusoidal vibration, Random vibration", "1.62 kN", "1.09 kN", "5–4000 Hz", "25.4 mm", "73 G", "50 kg")
+
+vibrationTestFacilities = [daytonTBrown1, daytonTBrown2, daytonTBrown3, daytonTBrown4, daytonTBrown5, daytonTBrown6, eliteElectronicEngineering, ngAzusa1, ngAzusa2, ngAzusa3, ngSpaceParkT5500SCIF, ngSpaceParkT4000, ngSpaceParkT1000, ngSpaceParkC150, universityTartuObservatory]
+
+
+
