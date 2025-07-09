@@ -41,7 +41,7 @@ ngSpacePark2 = emcAndemifacility("NG Space Park", "8.5 x 4.9 x 4.9", "10 KHz - 4
 ngSpacePark3 = emcAndemifacility("NG Space Park", "6.7 x 6.1 x 4.9", "10 KHz - 40GHz", "0.2 kV/m", "semi", "MIL-STD-461 Rev. A to G")
 tartuObservatory = emcAndemifacility("University of Tartu, Tartu Observatory", "4.28 m x 3.08 m x 2.55 m, test distance 1 m", "30 MHz ... 18 GHz", "max 0.05 kV/m", "semi", "IEC/EN 61000-4-3; ECSS-E-ST-20-07C ; MIL-STD-461G")
 
-EMCAndEMIFacilities = [daytonTBrownEMIroom1,daytonTBrownEMIroom2, daytonTBrownEMIroom3, daytonTBrownEMIroom4, daytonTBrownEMIroom5, daytonTBrownEMIroom6,ngAzusaB183,ngAzusaB200,ngAzusaB200aTent,ngSpacePark1,ngSpacePark2,ngSpacePark3ddd]
+EMCAndEMIFacilities = [daytonTBrownEMIroom1,daytonTBrownEMIroom2, daytonTBrownEMIroom3, daytonTBrownEMIroom4, daytonTBrownEMIroom5, daytonTBrownEMIroom6,ngAzusaB183,ngAzusaB200,ngAzusaB200aTent,ngSpacePark1,ngSpacePark2,ngSpacePark3]
 
 
 class vibrationFacility:
@@ -132,13 +132,39 @@ class shockFacility:
     def getOperatingFrequencyRange(self):
         return self.operatingFrequencyRange
 
-daytonTBrownVerticalHorizontalMips = vibrationFacility("USA", "3x3 m", "Pyro", "100 kg", "10000 G", "unknown", "20000 kN", "unknown")
-daytonTBrownLansmont = vibrationFacility("USA", "1x1 m", "Free Fall", "50 kg", "5000–10000 G", "10–20 mm", "unknown", "20000 Hz")
-daytonTBrownMontery = vibrationFacility("USA", "3x3 m", "Free Fall", "1000 kg", "500 G", "10 mm", "unknown", "20000 Hz")
-eliteElectronicEngineering = vibrationFacility("USA", "2.5 m", "classical, free fall", "2993 kg", "30000 G", "unknown", "900 kN", "unknown")
-ngAzusa = vibrationFacility("USA", "24x24 in", "Pendulum", "100 lbs", "5000 G", "N/A", "N/A", "10 kHz")
-ngSpaceParkPendulum = vibrationFacility("USA", '12"x12" small, 24"x24" mid, 27"x20" large', "Pendulum", "~120 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
-ngSpaceParkBungee = vibrationFacility("USA", '6"x6"', "Bungee", "<15 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
-universityTartuObservatory = vibrationFacility("Observatooriumi 1, Tõravere, 61602, Estonia", "1x1 m", "mechanical impact (metal-to-metal pendulum hammer system)", "26 kg", "30000 G SRS", "N/A", "N/A", "10–10000 Hz")
+daytonTBrownVerticalHorizontalMips = shockFacility("USA", "3x3 m", "Pyro", "100 kg", "10000 G", "unknown", "20000 kN", "unknown")
+daytonTBrownLansmont = shockFacility("USA", "1x1 m", "Free Fall", "50 kg", "5000–10000 G", "10–20 mm", "unknown", "20000 Hz")
+daytonTBrownMontery = shockFacility("USA", "3x3 m", "Free Fall", "1000 kg", "500 G", "10 mm", "unknown", "20000 Hz")
+eliteElectronicEngineering = shockFacility("USA", "2.5 m", "classical, free fall", "2993 kg", "30000 G", "unknown", "900 kN", "unknown")
+ngAzusa = shockFacility("USA", "24x24 in", "Pendulum", "100 lbs", "5000 G", "N/A", "N/A", "10 kHz")
+ngSpaceParkPendulum = shockFacility("USA", '12"x12" small, 24"x24" mid, 27"x20" large', "Pendulum", "~120 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
+ngSpaceParkBungee = shockFacility("USA", '6"x6"', "Bungee", "<15 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
+universityTartuObservatory = shockFacility("Observatooriumi 1, Tõravere, 61602, Estonia", "1x1 m", "mechanical impact (metal-to-metal pendulum hammer system)", "26 kg", "30000 G SRS", "N/A", "N/A", "10–10000 Hz")
 
 shockTestingFacilities = [daytonTBrownVerticalHorizontalMips, daytonTBrownLansmont, daytonTBrownMontery, eliteElectronicEngineering, ngAzusa, ngSpaceParkPendulum, ngSpaceParkBungee, universityTartuObservatory]
+
+class acousticFacilities:
+    def __init__(self, location, dimensions, testVolume, soundPressure, frequencyRange):
+        self.location = location
+        self.dimensions=dimensions
+        self.testVolume = testVolume
+        self.soundPressure = soundPressure
+        self.frequencyRange = frequencyRange
+    
+    def getLocation(self):
+        return location
+
+    def getDimensions(self):
+        return dimensions
+
+    def getTestVolume(self):
+        return testVolume
+
+    def getSoundPressure(self):
+        return soundPressure
+    
+    def getFrequencyRange(self):
+        return frequencyRange
+
+
+
