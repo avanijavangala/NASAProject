@@ -143,7 +143,7 @@ universityTartuObservatory = shockFacility("Observatooriumi 1, Tõravere, 61602,
 
 shockTestingFacilities = [daytonTBrownVerticalHorizontalMips, daytonTBrownLansmont, daytonTBrownMontery, eliteElectronicEngineering, ngAzusa, ngSpaceParkPendulum, ngSpaceParkBungee, universityTartuObservatory]
 
-class acousticFacilities:
+class acousticFacility:
     def __init__(self, location, dimensions, testVolume, soundPressure, frequencyRange):
         self.location = location
         self.dimensions=dimensions
@@ -166,5 +166,46 @@ class acousticFacilities:
     def getFrequencyRange(self):
         return frequencyRange
 
+daytonTBrown = acousiticFacility("USA",	"40x40m", "unknown", "146 dB",	"20000 Hz")
+ngAzusaDirectFieldAcousticFacility = acousticFacility("USA", "scalable system", "N/A", "147 dB", "10 kHz")
+ngSpacePark = acousticFacility("USA", "7.9 x 9.7 x 18.9 m", "1448 m3", "154 dB", "20 Hz to 10 kHz")
 
+acousticTestingFacilities = [daytonTBrown, ngAzusaDirectFieldAcousticFacility, ngSpacePark]
+
+class centrifugeFacility:
+    def __init__(self, location, armRadius, tableSize, maxPayloadMass, maxAcceleration, numberOfSLipRings, numberOfElectricalContacts):
+        self.location=location
+        self.armRadius = armRadius
+        self.tableSize = tableSize
+        self.maxPayloadMass = maxPayloadMass
+        self.maxAcceleration = maxAcceleration
+        self.numberOfSLipRings = numberOfSLipRings
+        self.numberOfElectricalContacts = numberOfElectricalContacts
+
+    def getLocation(self):
+        return self.location
+
+    def getArmRadius(self):
+        return self.armRadius
+
+    def getTableSize(self):
+        return self.tableSize
+
+    def getMaxPayloadMass(self):
+        return self.maxPayloadMass
+
+    def getMaxAcceleration(self):
+        return self.maxAcceleration
+
+    def getNumberOfSlipRings(self):
+        return self.numberOfSlipRings
+
+    def getNumberOfElectricalContacts(self):
+        return self.numberOfElectricalContacts
+
+daytonTBrown = centrifugeFacility("USA", "32 m", "3x3 m", "2000 kg", "200 G", "60", "unknown")
+eliteElectronicEngineering = centrifugeFacility("USA", "0.9 m", "0.6x0.6 m", "unknown", "50 G", "28", "unknown")
+istanbulTechnicalUniversity = centrifugeFacility("Turkey", "1.5 m", "unknown", "50 kg", "1–50 G", "unknown", "unknown")
+
+centrifugeTestingFacilities = [daytonTBrown, eliteElectronicEngineering, instanbulTechnicalUniversity]
 
