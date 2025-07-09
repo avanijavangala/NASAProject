@@ -96,4 +96,49 @@ universityTartuObservatory = vibrationFacility("Observatooriumi 1, Tõravere, 61
 vibrationTestFacilities = [daytonTBrown1, daytonTBrown2, daytonTBrown3, daytonTBrown4, daytonTBrown5, daytonTBrown6, eliteElectronicEngineering, ngAzusa1, ngAzusa2, ngAzusa3, ngSpaceParkT5500SCIF, ngSpaceParkT4000, ngSpaceParkT1000, ngSpaceParkC150, universityTartuObservatory]
 
 
+class shockFacility:
+    def __init__(self, location, tableSize, testType, maxWeight, maxAcceleration, maxDisplacement, force, operatingFrequencyRange):
 
+        self.location = location
+        self.tableSize = tableSize
+        self.testType = testType
+        self.maxWeight = maxWeight
+        self.maxAcceleration = maxAcceleration
+        self.maxDisplacement = maxDisplacement
+        self.force = force
+        self.operatingFrequencyRange = operatingFrequencyRange
+
+    def getLocation(self):
+        return self.location
+
+    def getTableSize(self):
+        return self.tableSize
+
+    def getTestType(self):
+        return self.testType
+
+    def getMaxWeight(self):
+        return self.maxWeight
+
+    def getMaxAcceleration(self):
+        return self.maxAcceleration
+
+    def getMaxDisplacement(self):
+        return self.maxDisplacement
+
+    def getForce(self):
+        return self.force
+
+    def getOperatingFrequencyRange(self):
+        return self.operatingFrequencyRange
+
+daytonTBrownVerticalHorizontalMips = vibrationFacility("USA", "3x3 m", "Pyro", "100 kg", "10000 G", "unknown", "20000 kN", "unknown")
+daytonTBrownLansmont = vibrationFacility("USA", "1x1 m", "Free Fall", "50 kg", "5000–10000 G", "10–20 mm", "unknown", "20000 Hz")
+daytonTBrownMontery = vibrationFacility("USA", "3x3 m", "Free Fall", "1000 kg", "500 G", "10 mm", "unknown", "20000 Hz")
+eliteElectronicEngineering = vibrationFacility("USA", "2.5 m", "classical, free fall", "2993 kg", "30000 G", "unknown", "900 kN", "unknown")
+ngAzusa = vibrationFacility("USA", "24x24 in", "Pendulum", "100 lbs", "5000 G", "N/A", "N/A", "10 kHz")
+ngSpaceParkPendulum = vibrationFacility("USA", '12"x12" small, 24"x24" mid, 27"x20" large', "Pendulum", "~120 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
+ngSpaceParkBungee = vibrationFacility("USA", '6"x6"', "Bungee", "<15 lbs", "8000 Gpk", "N/A", "N/A", "20 Hz – 10 kHz")
+universityTartuObservatory = vibrationFacility("Observatooriumi 1, Tõravere, 61602, Estonia", "1x1 m", "mechanical impact (metal-to-metal pendulum hammer system)", "26 kg", "30000 G SRS", "N/A", "N/A", "10–10000 Hz")
+
+shockTestingFacilities = [daytonTBrownVerticalHorizontalMips, daytonTBrownLansmont, daytonTBrownMontery, eliteElectronicEngineering, ngAzusa, ngSpaceParkPendulum, ngSpaceParkBungee, universityTartuObservatory]
