@@ -3,7 +3,7 @@ from openpyxl import Workbook
 from openpyxl.worksheet.datavalidation import DataValidation
 df = pd.readcsv('NasaFile.xlsx')
 
-class emcAndemifacility:
+class   RadiationTesting:
 
 
     def __init__(self, location, dimensions, frequencyRange, fieldStrengths, anechoicChamberType, standardNumber):
@@ -40,40 +40,6 @@ ngSpacePark1 = emcAndemifacility("NG Space Park", "9.1 x 7.6 x 5.2", "10 KHz - 4
 ngSpacePark2 = emcAndemifacility("NG Space Park", "8.5 x 4.9 x 4.9", "10 KHz - 40GHz", "0.2 kV/m", "semi", "MIL-STD-461 Rev. A to G")
 ngSpacePark3 = emcAndemifacility("NG Space Park", "6.7 x 6.1 x 4.9", "10 KHz - 40GHz", "0.2 kV/m", "semi", "MIL-STD-461 Rev. A to G")
 tartuObservatory = emcAndemifacility("University of Tartu, Tartu Observatory", "4.28 m x 3.08 m x 2.55 m, test distance 1 m", "30 MHz ... 18 GHz", "max 0.05 kV/m", "semi", "IEC/EN 61000-4-3; ECSS-E-ST-20-07C ; MIL-STD-461G")
-
-
-boeing_gamma_source_g = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source G", "220", "~1.25", "arthur.a.rugtvedt@boeing.com")
-boeing_gamma_source_e = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source E", "40", "~1.25", "arthur.a.rugtvedt@boeing.com")
-boeing_gamma_source_s = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source S", "1", "~1.25", "arthur.a.rugtvedt@boeing.com")
-boeing_open_field_gamma_irradiator = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "TID", "Open Field Gamma Irradiator", "0.1", "~1.25", "arthur.a.rugtvedt@boeing.com")
-
-boeing_dynamitron = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "SEE", "Dynamitron", "", "2.5", "arthur.a.rugtvedt@boeing.com")
-boeing_cretch = emcAndemifacility("Boeing Radiation Effects Lab", "USA", "SEE", "CRETCh", "", "0.75", "arthur.a.rugtvedt@boeing.com")
-
-northrop_pulsed_laser = emcAndemifacility("Northrop Grumman SEE - Pulsed Laser", "USA", "Single Event Effects", "Laser", "", "", "jonathan.avila2@ngc.com, jeffrey.warner@ngc.com")
-northrop_beacon_irradiator_1 = emcAndemifacility("Northrop Grumman ELDRS - Beacon Room Irradiator 1", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-northrop_beacon_irradiator_2 = emcAndemifacility("Northrop Grumman ELDRS - Beacon Room Irradiator 2", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-northrop_hopewell_ds20 = emcAndemifacility("Northrop Grumman ELDRS - Hopewell DS20 Room Irradiator", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-northrop_shepherd_142 = emcAndemifacility("Northrop Grumman ELDRS - Shepherd 142 Irradiator", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-
-northrop_gammacell_irradiator_1 = emcAndemifacility("Northrop Grumman TID HDR - Gammacell 220 Irradiator #1", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "<0.15", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-northrop_gammacell_irradiator_3 = emcAndemifacility("Northrop Grumman TID HDR - Gammacell 220 Irradiator #3", "USA", "Total Ionizing Dose - High Dose Rate", "Co60 Gamma Rays", "50-300", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-northrop_gammacell_irradiator_4 = emcAndemifacility("Northrop Grumman TID HDR - Gammacell 220 Irradiator #4", "USA", "Total Ionizing Dose - High Dose Rate", "Co60 Gamma Rays", "50-300", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-
-northrop_fxr_febetron_705 = emcAndemifacility("USA", "Prompt Dose (Nuclear Hardness & Survivability)", "X-Rays", "1E7-1E11 @ 22ns PWHM", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
-
-radef_heavy_ions = emcAndemifacility("Finland", "Heavy ions", "K-130 cyclotron, from B- Au", "from 5 up to coulpes of 1e5 ions/cm^2/s", "10, 16.3 and 22 MeV/n", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
-
-radef_protons = emcAndemifacility("Finland", "Protons", "K-130 cyclotron, protons", "from 1e4 up to coulpes of 1e9 protons/cm^2/s", "from 0.4 up to 55 MeV", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
-
-radef_gamma_rays = emcAndemifacility("Finland", "Gammarays", "Electron accelerator (pulssed photon beam)", "100-600 Rad /min = (1.7-10 Rad/s)", "6 MV and 15 MV Bremsstrahlung radiation", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
-
-radef_electrons = emcAndemifacility("Finland", "Electrons", "Electron accelerator (pulssed electron beam)", "100-1000 Rad /min = (1.7-17 Rad/s)", "6, 9, 12, 16 and 20 MeV", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
-
-dayton_20ft = emcAndemifacility("USA", "6x2.4", "-40 to 100", "22.8", "2", "mmay@dtb.com")
-dayton_6ft = emcAndemifacility("USA", "1.2x1.8", "-65 to 157", "22.8", "5", "mmay@dtb.com")
-dayton_4ft = emcAndemifacility("USA", "1.2x1.2", "-65 to 158", "22.8", "5", "mmay@dtb.com")
-dayton_tvac = emcAndemifacility("USA", "1.5x1.5", "-100 to 156", "10-6torr", "2", "mmay@dtb.com")
 
 
 
@@ -245,4 +211,115 @@ eliteElectronicEngineering = centrifugeFacility("USA", "0.9 m", "0.6x0.6 m", "un
 istanbulTechnicalUniversity = centrifugeFacility("Turkey", "1.5 m", "unknown", "50 kg", "1–50 G", "unknown", "unknown")
 
 centrifugeTestingFacilities = [daytonTBrown, eliteElectronicEngineering, instanbulTechnicalUniversity]
+
+
+
+class RadiationTesting:
+    def __init__(self, facilityName, location, testType, sourceOrParticles, doseRate, energy, contactEmail, webPage):
+        self.facilityName = facilityName
+        self.location = location
+        self.testType = testType
+        self.sourceOrParticles = sourceOrParticles
+        self.doseRate = doseRate
+        self.energy = energy
+        self.contactEmail = contactEmail
+        self.webPage = webPage
+
+    def getFacilityName(self):
+        return self.facilityName
+    def getLocation(self):
+        return self.location
+    def getTestType(self):
+        return self.testType
+    def getSourceOrParticles(self):
+        return self.sourceOrParticles
+    def getDoseRate(self):
+        return self.doseRate
+    def getEnergy(self):
+        return self.energy
+    def getContactEmail(self):
+        return self.contactEmail
+    def getWebPage(self):
+        return self.webPage
+    boeing_gamma_source_g =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source G", "220", "~1.25", "arthur.a.rugtvedt@boeing.com")
+boeing_gamma_source_e =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source E", "40", "~1.25", "arthur.a.rugtvedt@boeing.com")
+boeing_gamma_source_s =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "TID", "Gamma Source S", "1", "~1.25", "arthur.a.rugtvedt@boeing.com")
+boeing_open_field_gamma_irradiator =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "TID", "Open Field Gamma Irradiator", "0.1", "~1.25", "arthur.a.rugtvedt@boeing.com")
+
+boeing_dynamitron =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "SEE", "Dynamitron", "", "2.5", "arthur.a.rugtvedt@boeing.com")
+boeing_cretch =   RadiationTesting("Boeing Radiation Effects Lab", "USA", "SEE", "CRETCh", "", "0.75", "arthur.a.rugtvedt@boeing.com")
+
+northrop_pulsed_laser =   RadiationTesting("Northrop Grumman SEE - Pulsed Laser", "USA", "Single Event Effects", "Laser", "", "", "jonathan.avila2@ngc.com, jeffrey.warner@ngc.com")
+northrop_beacon_irradiator_1 =   RadiationTesting("Northrop Grumman ELDRS - Beacon Room Irradiator 1", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+northrop_beacon_irradiator_2 =   RadiationTesting("Northrop Grumman ELDRS - Beacon Room Irradiator 2", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+northrop_hopewell_ds20 =   RadiationTesting("Northrop Grumman ELDRS - Hopewell DS20 Room Irradiator", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+northrop_shepherd_142 =   RadiationTesting("Northrop Grumman ELDRS - Shepherd 142 Irradiator", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "≤0.01", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+
+northrop_gammacell_irradiator_1 =   RadiationTesting("Northrop Grumman TID HDR - Gammacell 220 Irradiator #1", "USA", "Total Ionizing Dose - Enhanced Low Dose Rate Sensitivity", "Co60 Gamma Rays", "<0.15", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+northrop_gammacell_irradiator_3 =   RadiationTesting("Northrop Grumman TID HDR - Gammacell 220 Irradiator #3", "USA", "Total Ionizing Dose - High Dose Rate", "Co60 Gamma Rays", "50-300", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+northrop_gammacell_irradiator_4 =   RadiationTesting("Northrop Grumman TID HDR - Gammacell 220 Irradiator #4", "USA", "Total Ionizing Dose - High Dose Rate", "Co60 Gamma Rays", "50-300", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+
+northrop_fxr_febetron_705 =   RadiationTesting("USA", "Prompt Dose (Nuclear Hardness & Survivability)", "X-Rays", "1E7-1E11 @ 22ns PWHM", "", "jonathan.avila2@ngc.com, jared.myers@ngc.com")
+
+radef_heavy_ions =   RadiationTesting("Finland", "Heavy ions", "K-130 cyclotron, from B- Au", "from 5 up to coulpes of 1e5 ions/cm^2/s", "10, 16.3 and 22 MeV/n", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
+
+radef_protons =   RadiationTesting("Finland", "Protons", "K-130 cyclotron, protons", "from 1e4 up to coulpes of 1e9 protons/cm^2/s", "from 0.4 up to 55 MeV", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
+
+radef_gamma_rays =   RadiationTesting("Finland", "Gammarays", "Electron accelerator (pulssed photon beam)", "100-600 Rad /min = (1.7-10 Rad/s)", "6 MV and 15 MV Bremsstrahlung radiation", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
+
+radef_electrons =   RadiationTesting("Finland", "Electrons", "Electron accelerator (pulssed electron beam)", "100-1000 Rad /min = (1.7-17 Rad/s)", "6, 9, 12, 16 and 20 MeV", "Heikki.i.Kettunen@jyu.fi, https://www.jyu.fi/accelerator/radef")
+
+class AltitudeChamber:
+    def __init__(self, facilityName, location, dimensions, temperatureRange, maxAltitude, heatingCoolingRates, contactEmail):
+        self.facilityName = facilityName
+        self.location = location
+        self.dimensions = dimensions
+        self.temperatureRange = temperatureRange
+        self.maxAltitude = maxAltitude
+        self.heatingCoolingRates = heatingCoolingRates
+        self.contactEmail = contactEmail
+
+    def getFacilityName(self):
+        return self.facilityName
+    def getLocation(self):
+        return self.location
+    def getDimensions(self):
+        return self.dimensions
+    def getTemperatureRange(self):
+        return self.temperatureRange
+    def getMaxAltitude(self):
+        return self.maxAltitude
+    def getHeatingCoolingRates(self):
+        return self.heatingCoolingRates
+    def getContactEmail(self):
+        return self.contactEmail
+dayton_20ft = AltitudeChamber("USA", "6x2.4", "-40 to 100", "22.8", "2", "mmay@dtb.com")
+dayton_6ft = AltitudeChamber("USA", "1.2x1.8", "-65 to 157", "22.8", "5", "mmay@dtb.com")
+dayton_4ft = AltitudeChamber("USA", "1.2x1.2", "-65 to 158", "22.8", "5", "mmay@dtb.com")
+dayton_tvac = AltitudeChamber("USA", "1.5x1.5", "-100 to 156", "10-6torr", "2", "mmay@dtb.com")
+
+class SensorsTesting:
+    def __init__(self, facilityName, location, testType, equipment, wavelengthRange, contactEmail):
+        self.facilityName = facilityName
+        self.location = location
+        self.testType = testType
+        self.equipment = equipment
+        self.wavelengthRange = wavelengthRange
+        self.contactEmail = contactEmail
+
+    def getFacilityName(self):
+        return self.facilityName
+    def getLocation(self):
+        return self.location
+    def getTestType(self):
+        return self.testType
+    def getEquipment(self):
+        return self.equipment
+    def getWavelengthRange(self):
+        return self.wavelengthRange
+    def getContactEmail(self):
+        return self.contactEmail
+elite_electronic_engineering = SensorsTesting("USA", "EMI, environmental stress", "Chambers", "", "michael.cosentino@elitetest.com")
+
+airborne_sensor_facility = SensorsTesting("USA", "radiometry/ spectral sensitivity", "eMAS, PICARD, MASTER, AMS, DMS, DCS, POS", "350 – 14000", "")
 
